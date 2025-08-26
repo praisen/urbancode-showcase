@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { ThemeProvider } from "next-themes";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
@@ -7,6 +6,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
+import { ClientsSection } from "@/components/ClientsSection";
 
 const Index = () => {
   useEffect(() => {
@@ -32,19 +32,18 @@ const Index = () => {
   }, []);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <main>
-          <HeroSection />
-          <ProjectsSection />
-          <AboutSection />
-          <TestimonialsSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ClientsSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

@@ -111,34 +111,6 @@ export function AboutSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Team section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 text-center"
-        >
-          <h3 className="text-3xl font-bold mb-6">Meet Our <span className="text-gradient">Expert Team</span></h3>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Our diverse team of developers, designers, and strategists work together to bring your vision to life 
-            with technical excellence and creative innovation.
-          </p>
-          
-          <div className="flex justify-center space-x-4">
-            {[1, 2, 3, 4].map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center"
-              >
-                <Users className="h-8 w-8 text-primary" />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

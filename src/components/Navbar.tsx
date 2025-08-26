@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +13,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-card-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border"
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -31,7 +30,7 @@ export function Navbar() {
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {["home", "projects", "about", "testimonials", "contact"].map((item, index) => (
+            {["home", "projects", "about", "clients", "testimonials", "contact"].map((item, index) => (
               <motion.button
                 key={item}
                 initial={{ opacity: 0, y: -20 }}
@@ -45,7 +44,6 @@ export function Navbar() {
             ))}
           </div>
 
-          <ThemeToggle />
         </div>
       </div>
     </motion.nav>
