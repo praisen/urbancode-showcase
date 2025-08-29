@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import urbancodeLogoSrc from "@/assets/urbancode-logo.png";
 
 export function Navbar() {
   const scrollToSection = (sectionId: string) => {
@@ -23,10 +24,11 @@ export function Navbar() {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">U</span>
-            </div>
-            <span className="text-2xl font-bold text-gradient">Urbancode</span>
+            <img 
+              src={urbancodeLogoSrc} 
+              alt="Urbancode Logo" 
+              className="h-10 w-auto"
+            />
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">

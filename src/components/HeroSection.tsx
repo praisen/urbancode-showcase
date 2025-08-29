@@ -82,7 +82,7 @@ export function HeroSection() {
                 onClick={scrollToContact}
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-accent px-8 py-6 text-lg font-semibold rounded-xl hover:scale-105 transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#333333] px-8 py-6 text-lg font-semibold rounded-xl hover:scale-105 transition-all duration-300 bg-transparent"
               >
                 Get in Touch
               </Button>

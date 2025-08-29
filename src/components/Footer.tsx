@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import urbancodeLogoSrc from "@/assets/urbancode-logo.png";
 
 export function Footer() {
   return (
@@ -14,10 +15,11 @@ export function Footer() {
             className="space-y-4"
           >
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">U</span>
-              </div>
-              <span className="text-xl font-bold text-gradient">Urbancode</span>
+              <img 
+                src={urbancodeLogoSrc} 
+                alt="Urbancode Logo" 
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-muted-foreground">
               Crafting exceptional web experiences with cutting-edge technology and innovative design.
