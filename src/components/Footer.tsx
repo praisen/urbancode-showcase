@@ -2,6 +2,30 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import urbancodeLogoSrc from "@/assets/urbancode-logo.png";
 
+const LetterAnimation = ({ letter, index }: { letter: string; index: number }) => {
+  return (
+    <motion.span
+      className="inline-block"
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.1,
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+      whileHover={{ 
+        y: -10,
+        transition: { duration: 0.2 }
+      }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  );
+};
+
 export function Footer() {
   return (
     <footer className="bg-secondary/30 border-t border-border py-12">
@@ -14,12 +38,17 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <div className="flex items-center space-x-2">
+            <div className="flex flex-col space-y-3">
               <img 
                 src={urbancodeLogoSrc} 
                 alt="Urbancode Logo" 
                 className="h-12 w-auto"
               />
+              <div className="text-3xl font-bold tracking-wider">
+                {"urbancode".split("").map((letter, index) => (
+                  <LetterAnimation key={index} letter={letter} index={index} />
+                ))}
+              </div>
             </div>
             <p className="text-muted-foreground">
               Crafting exceptional web experiences with cutting-edge technology and innovative design.

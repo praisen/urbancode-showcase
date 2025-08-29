@@ -20,26 +20,23 @@ export function HeroSection() {
 
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background image with Netflix-style layout */}
+      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroWebDev}
           alt="Professional Web Development"
           className="w-full h-full object-cover"
         />
-        {/* Gradient overlay for content readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-accent/90 via-accent/70 to-transparent" />
+        {/* Subtle overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
-          {/* Left side - Image is handled by background */}
-          <div></div>
-
-          {/* Right content */}
-          <div className="space-y-8 text-white">
+        <div className="flex items-center min-h-screen">
+          {/* Left content with dark overlay background */}
+          <div className="w-full lg:w-1/2 space-y-8 text-white bg-black/60 backdrop-blur-sm p-8 lg:p-12 rounded-2xl">
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-6"
@@ -64,7 +61,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4"
@@ -89,7 +86,7 @@ export function HeroSection() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex items-center space-x-8 pt-8"

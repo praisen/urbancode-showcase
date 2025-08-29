@@ -52,8 +52,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				heading: ['var(--font-heading)'],
-				body: ['var(--font-body)']
+				heading: ['Inter', 'system-ui', 'sans-serif'],
+				body: ['Inter', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'system-ui', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
