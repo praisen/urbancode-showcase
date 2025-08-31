@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Trophy, BarChart3, FileText, Globe } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
@@ -11,7 +10,7 @@ const services = [
   },
   {
     icon: BarChart3,
-    title: "Data Analytics",
+    title: "Data Analytics", 
     description: "Data analytics drives informed decisions, optimizing performance and achieving measurable business success."
   },
   {
@@ -33,11 +32,12 @@ export function ServicesSection() {
   });
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-accent/5 via-primary/5 to-secondary/5 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+    <section ref={ref} className="py-24 bg-[#1a1a1a] relative overflow-hidden">
+      {/* Dark background with subtle decorations */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -47,18 +47,7 @@ export function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center space-x-2 text-primary mb-4">
-            <span className="h-px w-8 bg-primary"></span>
-            <span className="text-sm font-semibold tracking-wide uppercase">Experience Creative Freedom</span>
-            <span className="h-px w-8 bg-primary"></span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Tailored Corporate Solutions For Your
-            <span className="block text-primary">Business Needs.</span>
-          </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-white/70 text-lg max-w-4xl mx-auto leading-relaxed">
             Urbancode empowers your business with dynamic, user-centric software solutions tailored to your 
             unique needs. Enhance customer engagement, streamline digital communication, and drive growth 
             with our innovative and comprehensive software solutions.
@@ -71,65 +60,37 @@ export function ServicesSection() {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                initial={{ opacity: 0, y: 80, scale: 0.8 }}
                 animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
                 transition={{ 
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100
+                  duration: 0.8,
+                  delay: index * 0.2,
+                  ease: "easeOut"
                 }}
                 whileHover={{ 
-                  y: -5,
-                  transition: { duration: 0.2 }
+                  y: -10,
+                  scale: 1.02,
+                  transition: { duration: 0.3 }
                 }}
-                className="group"
+                className="group cursor-pointer"
               >
-                <Card className="h-full glass-card border-card-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                        <Icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl text-card-foreground group-hover:text-primary transition-colors duration-300">
-                        {service.title}
-                      </CardTitle>
+                <div className="h-full bg-[#2a2a2a]/80 backdrop-blur-sm border border-[#3a3a3a] rounded-2xl p-8 hover:border-primary/40 transition-all duration-500 hover:bg-[#2a2a2a]/90">
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 mb-4">
+                      <Icon className="h-8 w-8 text-primary" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-white/70 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </motion.div>
             );
           })}
         </div>
-
-        {/* Call to action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <div className="max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 border border-primary/20">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-              Join Our Team: Recruiting Skilled Business Executives for Exciting, Rewarding Opportunities
-            </h3>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-3 bg-primary hover:bg-primary-glow text-primary-foreground rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Get In Touch
-              <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
