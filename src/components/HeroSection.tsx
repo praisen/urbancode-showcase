@@ -27,14 +27,14 @@ export function HeroSection() {
           alt="Professional Web Development"
           className="w-full h-full object-cover"
         />
-        {/* Subtle overlay for better contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
+        {/* Dark overlay on left side for content visibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex items-center min-h-screen">
-          {/* Left content with dark overlay background */}
-          <div className="w-full lg:w-1/2 space-y-8 text-white bg-black/60 backdrop-blur-sm p-8 lg:p-12 rounded-2xl">
+          {/* Left content with enhanced dark overlay background */}
+          <div className="w-full lg:w-1/2 space-y-8 text-white bg-black/80 backdrop-blur-md p-8 lg:p-12 rounded-2xl border border-white/10">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}

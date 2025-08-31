@@ -6,19 +6,25 @@ const LetterAnimation = ({ letter, index }: { letter: string; index: number }) =
   return (
     <motion.span
       className="inline-block"
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 0.8,
-        delay: index * 0.1,
-        type: "spring",
-        stiffness: 100,
-        damping: 10
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ 
+        y: [50, -10, 0], 
+        opacity: 1,
+        transition: {
+          duration: 0.6,
+          delay: index * 0.1,
+          times: [0, 0.6, 1],
+          ease: "easeOut"
+        }
       }}
       viewport={{ once: true, amount: 0.5 }}
       whileHover={{ 
-        y: -10,
-        transition: { duration: 0.2 }
+        y: [-5, -15, -5],
+        transition: { 
+          duration: 0.4,
+          times: [0, 0.5, 1],
+          ease: "easeInOut"
+        }
       }}
     >
       {letter === " " ? "\u00A0" : letter}

@@ -84,9 +84,12 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15 
+              }}
               className="glass-card p-8 rounded-2xl hover-lift group relative"
             >
               <Quote className="absolute top-4 right-4 h-6 w-6 text-primary/30" />

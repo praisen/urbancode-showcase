@@ -94,9 +94,13 @@ export function AboutSection() {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.4 + index * 0.15,
+                ease: "easeOut"
+              }}
               className="glass-card p-8 rounded-2xl hover-lift group"
             >
               <div className="flex items-start space-x-4">

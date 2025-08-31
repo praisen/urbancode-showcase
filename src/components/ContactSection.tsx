@@ -67,9 +67,9 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, x: -60, scale: 0.9 }}
+            animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-8"
           >
             <div>
@@ -137,9 +137,9 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, x: 60, scale: 0.9 }}
+            animate={inView ? { opacity: 1, x: 0, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="glass-card p-8 rounded-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
