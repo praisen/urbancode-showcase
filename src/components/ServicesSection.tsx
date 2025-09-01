@@ -41,32 +41,39 @@ export function ServicesSection() {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const isEvenIndex = index % 2 === 0;
+            const shouldRiseUp = index === 1 || index === 3; // Cards 2 and 4
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: isEvenIndex ? 100 : -100 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                initial={{ opacity: 0, y: 80 }}
+                animate={inView ? { 
+                  opacity: 1, 
+                  y: shouldRiseUp ? -20 : 0 
+                } : {}}
                 transition={{ 
                   duration: 0.8,
                   delay: index * 0.15,
                   ease: "easeOut"
                 }}
-                className={`flex-1 ${isEvenIndex ? 'lg:mt-16' : 'lg:mt-0'}`}
+                whileHover={{ 
+                  y: shouldRiseUp ? -30 : -10,
+                  transition: { duration: 0.3 }
+                }}
+                className="flex-1"
               >
-                <div className="bg-[#1c1c1c] border border-primary/20 rounded-2xl p-8 h-full transition-all duration-500 hover:border-primary/40 hover:bg-[#202020] group">
+                <div className="bg-[#1c1c1c] border border-primary/20 rounded-2xl p-8 h-full min-h-[280px] transition-all duration-500 hover:border-primary/40 hover:bg-[#202020] group flex flex-col">
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                       <Icon className="h-8 w-8 text-primary stroke-[1.5]" />
                     </div>
-                    <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
                       {service.title}
                     </h4>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed flex-1">
                     {service.description}
                   </p>
                 </div>
