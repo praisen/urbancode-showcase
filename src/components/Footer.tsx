@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Phone, ArrowUpRight } from "lucide-react";
 import urbancodeLogoSrc from "@/assets/urbancode-logo.png";
+import footerBgSrc from "@/assets/footer-bg.jpg";
 
 const LetterAnimation = ({ letter, index }: { letter: string; index: number }) => {
   return (
@@ -34,96 +35,142 @@ const LetterAnimation = ({ letter, index }: { letter: string; index: number }) =
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/30 border-t border-border py-12">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-4"
-          >
-            <div className="flex flex-col space-y-3">
-              <img 
-                src={urbancodeLogoSrc} 
-                alt="Urbancode Logo" 
-                className="h-12 w-auto"
-              />
-              <div className="text-3xl font-bold tracking-wider">
-                {"urbancode".split("").map((letter, index) => (
-                  <LetterAnimation key={index} letter={letter} index={index} />
-                ))}
-              </div>
-            </div>
-            <p className="text-muted-foreground">
-              Crafting exceptional web experiences with cutting-edge technology and innovative design.
-            </p>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="font-bold mb-4 text-foreground">Services</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>Web Development</li>
-              <li>Mobile Apps</li>
-              <li>E-commerce</li>
-              <li>UI/UX Design</li>
-            </ul>
-          </motion.div>
-
-          {/* Company */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="font-bold mb-4 text-foreground">Company</h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>About</li>
-              <li>Projects</li>
-              <li>Contact</li>
-              <li>Careers</li>
-            </ul>
-          </motion.div>
-
-          {/* Connect */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h4 className="font-bold mb-4 text-foreground">Connect</h4>
-            <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Github className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Linkedin className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Twitter className="h-5 w-5 text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Mail className="h-5 w-5 text-primary" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-border pt-8 mt-8 text-center text-muted-foreground"
-        >
-          <p>&copy; 2024 Urbancode. All rights reserved. Built with ❤️ and cutting-edge technology.</p>
-        </motion.div>
+    <footer className="relative bg-[#1a1a1a] text-white overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={footerBgSrc} 
+          alt="Footer Background" 
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-[#1a1a1a]/80" />
       </div>
+
+      {/* Main Footer Content */}
+      <div className="relative z-10 py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Brand */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-4"
+            >
+              <div className="flex flex-col space-y-3">
+                <img 
+                  src={urbancodeLogoSrc} 
+                  alt="Urbancode Logo" 
+                  className="h-12 w-auto brightness-0 invert"
+                />
+                <div className="text-2xl font-bold tracking-wider text-white">
+                  {"urbancode".split("").map((letter, index) => (
+                    <LetterAnimation key={index} letter={letter} index={index} />
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Useful Pages */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h4 className="font-semibold mb-6 text-gray-400 text-sm uppercase tracking-wider">Useful Pages</h4>
+              <ul className="space-y-3 text-white/80">
+                <li><a href="#" className="hover:text-primary transition-colors">Services</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Shop</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Contact</a></li>
+              </ul>
+            </motion.div>
+
+            {/* Our Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h4 className="font-semibold mb-6 text-gray-400 text-sm uppercase tracking-wider">Our Services</h4>
+              <ul className="space-y-3 text-white/80">
+                <li><a href="#" className="hover:text-primary transition-colors">Strategic Planning</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Financial Consulting</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Operational Optimization</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">HR Development</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Marketing Strategy</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Technology Integration</a></li>
+              </ul>
+            </motion.div>
+
+            {/* Contact & Social */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="space-y-6"
+            >
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <p className="text-white/80 text-sm">Have any questions?</p>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span className="text-white font-medium">Free: +1 917 265 8444</span>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex space-x-3">
+                <a href="#" className="w-10 h-10 bg-white/10 border border-white/20 rounded-md flex items-center justify-center hover:bg-primary/20 hover:border-primary/40 transition-all">
+                  <Github className="h-4 w-4 text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white/10 border border-white/20 rounded-md flex items-center justify-center hover:bg-primary/20 hover:border-primary/40 transition-all">
+                  <Linkedin className="h-4 w-4 text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white/10 border border-white/20 rounded-md flex items-center justify-center hover:bg-primary/20 hover:border-primary/40 transition-all">
+                  <Twitter className="h-4 w-4 text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white/10 border border-white/20 rounded-md flex items-center justify-center hover:bg-primary/20 hover:border-primary/40 transition-all">
+                  <Mail className="h-4 w-4 text-white" />
+                </a>
+              </div>
+
+              {/* Join Us CTA */}
+              <div className="pt-4">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-2 text-primary hover:text-primary/80 transition-colors group"
+                >
+                  <span className="font-medium">Join Us to shape the future</span>
+                  <ArrowUpRight className="h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="relative z-10 border-t border-white/10 py-6"
+      >
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-white/60 text-sm">
+              ©2025 <span className="text-white">urbancode</span>. All Rights Reserved.
+            </p>
+            <div className="flex space-x-6 text-sm text-white/60">
+              <a href="#" className="hover:text-white transition-colors">Partner Registration</a>
+              <a href="#" className="hover:text-white transition-colors">Terms Of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Legal Info</a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </footer>
   );
 }
