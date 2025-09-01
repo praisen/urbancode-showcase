@@ -41,47 +41,30 @@ export function ServicesSection() {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <p className="text-white/70 text-lg max-w-4xl mx-auto leading-relaxed">
-            Urbancode empowers your business with dynamic, user-centric software solutions tailored to your 
-            unique needs. Enhance customer engagement, streamline digital communication, and drive growth 
-            with our innovative and comprehensive software solutions.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
+            const isEvenIndex = index % 2 === 0;
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 80, scale: 0.8 }}
-                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                initial={{ opacity: 0, y: isEvenIndex ? 100 : -100 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ 
                   duration: 0.8,
-                  delay: index * 0.2,
+                  delay: index * 0.15,
                   ease: "easeOut"
                 }}
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.02,
-                  transition: { duration: 0.3 }
-                }}
-                className="group cursor-pointer"
+                className={`flex-1 ${isEvenIndex ? 'lg:mt-16' : 'lg:mt-0'}`}
               >
-                <div className="h-full bg-[#2a2a2a]/80 backdrop-blur-sm border border-[#3a3a3a] rounded-2xl p-8 hover:border-primary/40 transition-all duration-500 hover:bg-[#2a2a2a]/90">
+                <div className="bg-[#1c1c1c] border border-primary/20 rounded-2xl p-8 h-full transition-all duration-500 hover:border-primary/40 hover:bg-[#202020] group">
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 mb-4">
-                      <Icon className="h-8 w-8 text-primary" />
+                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-primary stroke-[1.5]" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors duration-300">
                       {service.title}
-                    </h3>
+                    </h4>
                   </div>
                   <p className="text-white/70 leading-relaxed">
                     {service.description}
