@@ -21,7 +21,7 @@ const LetterAnimation = ({ letter, index }: { letter: string; index: number }) =
       viewport={{ once: true, amount: 0.5 }}
       whileHover={{ 
         y: [-5, -15, -5],
-        transition: { 
+        transition: {
           duration: 0.4,
           times: [0, 0.5, 1],
           ease: "easeInOut"
@@ -41,9 +41,8 @@ export function Footer() {
         <img 
           src={footerBgSrc} 
           alt="Footer Background" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-[#1a1a1a]/80" />
       </div>
 
       {/* Main Footer Content */}
@@ -57,18 +56,18 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               className="space-y-4"
             >
-              <div className="flex flex-col space-y-3">
+              <motion.div
+                className="flex flex-col space-y-3"
+                initial={{ y: 0 }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
+              >
                 <img 
                   src={urbancodeLogoSrc} 
                   alt="Urbancode Logo" 
-                  className="h-12 w-auto brightness-0 invert"
+                  className="h-12 w-auto footer-logo"
                 />
-                <div className="text-2xl font-bold tracking-wider text-white">
-                  {"urbancode".split("").map((letter, index) => (
-                    <LetterAnimation key={index} letter={letter} index={index} />
-                  ))}
-                </div>
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Useful Pages */}
@@ -93,7 +92,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="font-semibold mb-6 text-gray-400 text-sm uppercase tracking-wider">Our Services</h4>
+              <h4 className="text-lg font-semibold">Our Services</h4>
               <ul className="space-y-3 text-white/80">
                 <li><a href="#" className="hover:text-primary transition-colors">Strategic Planning</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Financial Consulting</a></li>

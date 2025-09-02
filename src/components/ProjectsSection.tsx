@@ -21,14 +21,6 @@ const projects = [
     githubUrl: "#"
   },
   {
-    title: "Learning Management System",
-    description: "Interactive LMS platform with course management, video streaming, and progress tracking.",
-    tech: ["React", "Express", "MySQL", "AWS"],
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
-    liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
     title: "Healthcare App",
     description: "Patient management system with appointment scheduling and medical records.",
     tech: ["Vue.js", "Python", "Django", "PostgreSQL"],
@@ -49,6 +41,14 @@ const projects = [
     description: "Financial technology app with secure transactions, budgeting tools, and analytics.",
     tech: ["React Native", "Node.js", "PostgreSQL", "Plaid"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+    liveUrl: "#",
+    githubUrl: "#"
+  },
+  {
+    title: "AI Chatbot",
+    description: "Intelligent chatbot with natural language processing and machine learning capabilities.",
+    tech: ["Python", "TensorFlow", "React", "Node.js"],
+    image: "https://images.unsplash.com/photo-1580894726691-4ce4b13c8653?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
   }
@@ -77,15 +77,11 @@ export function ProjectsSection() {
             <span className="text-sm font-semibold tracking-wide uppercase">Our Work</span>
             <div className="w-2 h-2 bg-primary rounded-full" />
           </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="text-2xl font-medium text-gray-800 uppercase mb-8">Transform Businesses And Create Exceptional Digital Experiences</div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 ">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our latest web development projects showcasing innovative solutions 
-            and cutting-edge technologies.
-          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
