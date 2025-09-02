@@ -31,10 +31,10 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex items-end min-h-screen">
+      <div className="relative z-10">
+        <div className="flex items-center min-h-screen">
           {/* Left content with enhanced dark overlay background */}
-          <div className="w-full lg:w-1/2 space-y-8 text-white bg-black/40 backdrop-blur-md p-8 lg:p-12 rounded-r-2xl border border-white/10 ml-[-1.5rem] mb-0">
+          <div className="w-full lg:w-1/2 space-y-8 text-white bg-black/40 backdrop-blur-md p-8 lg:p-12 pl-6 pr-12 rounded-r-2xl border border-white/10 min-h-screen flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
