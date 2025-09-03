@@ -60,8 +60,7 @@ export function AboutSection() {
             Crafting Digital <span className="text-gradient">Excellence</span>
           </h2>
           
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            At Urbancode, we're passionate about transforming ideas into exceptional web experiences. 
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"> 
             Our team combines creativity with technical expertise to deliver solutions that drive business growth.
           </p>
         </motion.div>

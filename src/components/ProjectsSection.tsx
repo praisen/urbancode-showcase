@@ -7,7 +7,7 @@ const projects = [
   {
     title: "E-Commerce Platform",
     description: "Modern e-commerce solution with advanced features, payment integration, and responsive design.",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    //tech: ["React", "Node.js", "MongoDB", "Stripe"],
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -15,7 +15,7 @@ const projects = [
   {
     title: "SaaS Dashboard",
     description: "Comprehensive analytics dashboard with real-time data visualization and user management.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+    //tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Healthcare App",
     description: "Patient management system with appointment scheduling and medical records.",
-    tech: ["Vue.js", "Python", "Django", "PostgreSQL"],
+    //tech: ["Vue.js", "Python", "Django", "PostgreSQL"],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -31,7 +31,7 @@ const projects = [
   {
     title: "Real Estate Platform",
     description: "Property listing platform with advanced search, virtual tours, and CRM integration.",
-    tech: ["React", "Node.js", "MongoDB", "Mapbox"],
+    //tech: ["React", "Node.js", "MongoDB", "Mapbox"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -39,7 +39,7 @@ const projects = [
   {
     title: "Fintech Application",
     description: "Financial technology app with secure transactions, budgeting tools, and analytics.",
-    tech: ["React Native", "Node.js", "PostgreSQL", "Plaid"],
+    //tech: ["React Native", "Node.js", "PostgreSQL", "Plaid"],
     image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -47,7 +47,7 @@ const projects = [
   {
     title: "AI Chatbot",
     description: "Intelligent chatbot with natural language processing and machine learning capabilities.",
-    tech: ["Python", "TensorFlow", "React", "Node.js"],
+    //tech: ["Python", "TensorFlow", "React", "Node.js"],
     image: "https://images.unsplash.com/photo-1580894726691-4ce4b13c8653?w=600&h=400&fit=crop",
     liveUrl: "#",
     githubUrl: "#"
@@ -74,7 +74,7 @@ export function ProjectsSection() {
         >
           <div className="flex items-center justify-center space-x-2 text-primary mb-4">
             <div className="w-2 h-2 bg-primary rounded-full" />
-            <span className="text-sm font-semibold tracking-wide uppercase">Our Work</span>
+            <span className="text-sm font-semibold tracking-wide uppercase">Our Projects</span>
             <div className="w-2 h-2 bg-primary rounded-full" />
           </div>
           <div className="text-2xl font-medium text-gray-800 uppercase mb-8">Transform Businesses And Create Exceptional Digital Experiences</div>
@@ -123,8 +123,8 @@ export function ProjectsSection() {
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
+                {/* <div className="flex flex-wrap gap-2">
+                  {project.tech?.map((tech, techIndex) => (
                     <span
                       key={techIndex}
                       className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full border border-primary/20"
@@ -132,7 +132,7 @@ export function ProjectsSection() {
                       {tech}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}
