@@ -82,7 +82,7 @@ export function ParticleText({ text, className = "" }: ParticleTextProps) {
     };
 
     function createSimpleTextParticles(text: string, scene: THREE.Scene): THREE.Points {
-      const particlesArray = [];
+      const positions = [];
       const colors = [];
       
       // Create a grid of particles that roughly forms the text shape
@@ -94,7 +94,7 @@ export function ParticleText({ text, className = "" }: ParticleTextProps) {
           // Simple text approximation - more particles for letters
           const charIndex = Math.floor(x / 8);
           if (charIndex < text.length && text[charIndex] !== ' ') {
-            particlesArray.push(
+            positions.push(
               x - textWidth / 2,
               y - textHeight / 2,
               Math.random() * 2 - 1
@@ -105,7 +105,7 @@ export function ParticleText({ text, className = "" }: ParticleTextProps) {
       }
 
       const geometry = new THREE.BufferGeometry();
-      geometry.setAttribute('position', new THREE.Float32BufferAttribute(particlesArray, 3));
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
       geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
       const material = new THREE.PointsMaterial({
