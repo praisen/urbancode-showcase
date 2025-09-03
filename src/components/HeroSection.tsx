@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Zap, Globe } from "lucide-react";
 import heroWebDev from "@/assets/hero-web-dev.jpg";
-import { ParticleText } from "./ParticleText";
 
 export function HeroSection() {
   const scrollToProjects = () => {
@@ -50,18 +49,10 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight relative">
-              <div className="absolute inset-0 w-full h-full">
-                <ParticleText 
-                  text="Building Digital Excellence with Innovation" 
-                  className="absolute inset-0 z-10" 
-                />
-              </div>
-              <div className="relative z-20 opacity-30">
-                Building Digital
-                <span className="block text-primary">Excellence</span>
-                <span className="block">with Innovation</span>
-              </div>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              Building Digital
+              <span className="block text-primary">Excellence</span>
+              <span className="block">with Innovation</span>
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-lg">
