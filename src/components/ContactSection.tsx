@@ -24,8 +24,9 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. We'll get back to you soon.",
+      title: "Message Received Successfully! ✅",
+      description: `Hello ${formData.name}! Thank you for reaching out to us. We've received your message about "${formData.subject}" and will get back to you within 24 hours.`,
+      duration: 5000, // 5 seconds
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
