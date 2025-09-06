@@ -65,8 +65,7 @@ export function ContactSection() {
           </h2>
 
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your digital presence? Get in touch with us today
-            and let's discuss your next project.
+            Ready to transform your digital presence?
           </p>
         </motion.div>
 
@@ -123,7 +122,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="pt-8">
+            {/* <div className="pt-8">
               <h4 className="font-bold mb-4 text-foreground">
                 Why Choose Urbancode?
               </h4>
@@ -145,7 +144,7 @@ export function ContactSection() {
                   <span>Competitive pricing and fast delivery</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Contact Form */}
